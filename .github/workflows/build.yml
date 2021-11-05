@@ -32,5 +32,5 @@ jobs:
           destination_folder: 'PDF'
           destination_branch: pdf-build
           user_email: 'BikramHalder@users.noreply.github.com'
-          user_name: 'BikramHalder'
+          user_name: 'ISIBC-ProblemCollection'
           
