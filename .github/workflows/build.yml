@@ -20,15 +20,15 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: main.pdf
+          path: Problems.pdf
       - name: Push to other repo
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.USER_TOKEN }}
         with:
           github_server: 'github.com'
-          source_file: 'main.pdf'
-          destination_repo: 'BikramHalder/Test_latex'
+          source_file: 'Problems.pdf'
+          destination_repo: 'ISIBC-ProblemCollection/Problem_Collection'
           destination_folder: 'PDF'
           destination_branch: pdf-build
           user_email: 'BikramHalder@users.noreply.github.com'
