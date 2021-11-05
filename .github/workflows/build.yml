@@ -1,0 +1,36 @@
+name: Build LaTeX document
+on: 
+  push:
+    branches: [ master ]
+
+permissions:
+  contents: write
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: main.tex
+      - name: Getting the doc
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: main.pdf
+      - name: Push to other repo
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.USER_TOKEN }}
+        with:
+          github_server: 'github.com'
+          source_file: 'main.pdf'
+          destination_repo: 'BikramHalder/Test_latex'
+          destination_folder: 'PDF'
+          destination_branch: pdf-build
+          user_email: 'BikramHalder@users.noreply.github.com'
+          user_name: 'BikramHalder'
+          
