@@ -1,6 +1,10 @@
 name: Build LaTeX document
 on: 
   push:
+    paths-ignore: 
+      - demo.txt
+      - readme.md
+      - .github/workfolws/build.yml
     branches: [ master ]
 
 permissions:
