@@ -30,7 +30,7 @@
 \newcommand{\texty}[1]{\textsf{\textbf{#1}}}
 
 \newcommand{\shared}[1]{\begin{flushright}\textit{(shared by #1)}\end{flushright}}
-
+\newcommand{\plabel}[1]{(Solution to \texty{Problem} \ref{#1})}
 
 % Custom tcolorbox styles and new environments
 
@@ -87,7 +87,7 @@
 {
     \vspace{0.1cm}
     \textit{Solution.}
-}{$\hfill \blacksquare$}
+}{$\hfill \blacksquare \newline$}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}{Corollary}[theorem]

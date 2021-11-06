@@ -1,0 +1,16 @@
+\begin{soln} \plabel{week1:p7}.
+    We have 
+    \begin{align*}
+        &n_a + n_b \equiv n_c + n_d \modulo{10100} \\
+        &\Rightarrow 101(a+b-c-d) - 100(2^a+2^b-2^c-2^d) \equiv 0 \modulo{10100} \\
+        &\Rightarrow a+b-c-d \equiv 0 \modulo{100}
+    \end{align*}
+    Let $a+b-c-d = 100k$ where $ k \in \bb{Z} $ then $ 2^a = 2^{100k +c+d-b} \equiv 2^{c+d-b} \modulo{101} $. Then we get 
+    \begin{align*}
+        &2^a + 2^b \equiv 2^c + 2^d \modulo{101} \\
+        &\Rightarrow 2^{c+d-b} + 2^b \equiv 2^c + 2^d \modulo{101} \\
+        &\Rightarrow (2^{c+d} - 2^c)+ (2^{2b}-2^{b+d}) \equiv 0 \modulo{101}\\
+        &\Rightarrow (2^b-2^c)(2^b-2^d) \equiv 0 \modulo{101} 
+    \end{align*}
+    WLOG assume $(2^b -2^d) \equiv 0 \modulo{101}$ then we get $o_{101}(2) \ | \ (b-d) \Rightarrow 100 \ | \ (b-d) \leq 99 $ (since $2$ is a primitive root modulo $101$) hence we must have $b=d$. But then we get $a-c \equiv 0 \modulo{100}$, but $a-c \leq 99$ hence we get $a = c$, thus $\{a,b\} = \{c,d\}$. The case when $(2^b-2^c) \equiv 0 \modulo{101}$ is similar, just we will get $b=c$ and $a=d$.
+\end{soln}
